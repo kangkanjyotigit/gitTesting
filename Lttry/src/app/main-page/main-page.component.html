@@ -1,0 +1,31 @@
+<form [formGroup]="lotteryForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="number">Select a number (between 10,000 and 99,999):</label>
+    <input type="number" id="number" class="form-control" formControlName="number">
+    <div *ngIf="lotteryForm.get('number').invalid && (lotteryForm.get('number').dirty || lotteryForm.get('number').touched)">
+      <div *ngIf="lotteryForm.get('number').errors.required">
+        Number is required.
+      </div>
+      <div *ngIf="lotteryForm.get('number').errors.min">
+        Number must be at least 10,000.
+      </div>
+      <div *ngIf="lotteryForm.get('number').errors.max">
+        Number cannot be greater than 99,999.
+      </div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="payment">Payment amount (100 INR):</label>
+    <input type="number" id="payment" class="form-control" formControlName="payment">
+    <div *ngIf="lotteryForm.get('payment').invalid && (lotteryForm.get('payment').dirty || lotteryForm.get('payment').touched)">
+      <div *ngIf="lotteryForm.get('payment').errors.required">
+        Payment is required.
+      </div>
+      <div *ngIf="lotteryForm.get('payment').errors.pattern">
+        Payment must be a number.
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="lotteryForm.invalid"><i class="fas fa-shopping-cart"></i>
+  Buy</button>
+</form>
