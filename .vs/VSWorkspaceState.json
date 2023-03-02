@@ -1,7 +1,13 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Lttry",
+    "\\Lttry\\.angular",
+    "\\Lttry\\src",
+    "\\Lttry\\src\\app",
+    "\\Lttry\\src\\app\\main-page",
+    "\\Lttry\\src\\assets"
   ],
-  "SelectedNode": "\\C:\\Users\\kangk\\Source\\Repos\\gitTesting",
+  "SelectedNode": "\\Lttry\\src\\app\\app.component.ts",
   "PreviewInSolutionExplorer": false
 }
